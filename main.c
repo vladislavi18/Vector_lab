@@ -65,7 +65,7 @@ void test_atVector_notEmptyVector() {
     assert(*a == 4);
 }
 
-void test_atVector_requestToLastElement(){
+void test_atVector_requestToLastElement() {
     vector v = createVector(3);
     pushBack(&v, 3);
     pushBack(&v, 7);
@@ -74,14 +74,14 @@ void test_atVector_requestToLastElement(){
     assert(*a == 10);
 }
 
-void test_back_oneElementInVector(){
+void test_back_oneElementInVector() {
     vector v = createVector(1);
     pushBack(&v, 3);
     int *a = back(&v);
     assert(*a == 3);
 }
 
-void test_front_oneElementInVector(){
+void test_front_oneElementInVector() {
     vector v = createVector(1);
     pushBack(&v, 10);
     int *a = front(&v);

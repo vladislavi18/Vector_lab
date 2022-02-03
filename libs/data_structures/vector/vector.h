@@ -14,9 +14,9 @@ typedef struct vector {
 
 vector createVector(size_t n);
 
-void reserve (vector *v, size_t newCapacity);
+void reserve(vector *v, size_t newCapacity);
 
-void clear (vector *v);
+void clear(vector *v);
 
 void shrinkToFit(vector *v);
 
@@ -32,10 +32,10 @@ void pushBack(vector *v, int x);
 
 void popBack(vector *v);
 
-int* atVector(vector *v, size_t index);
+int *atVector(vector *v, size_t index);
 
-int* back(vector *v);
+int *back(vector *v);
 
-int* front(vector *v);
+int *front(vector *v);
 
 #endif

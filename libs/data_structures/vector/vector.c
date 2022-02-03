@@ -19,8 +19,7 @@ void reserve(vector *v, size_t newCapacity) {
             fprintf(stderr, "bad alloc");
             exit(1);
         }
-    }
-    else
+    } else
         v->data = NULL;
     if (newCapacity < v->size)
         v->size = newCapacity;
@@ -81,19 +80,19 @@ void popBack(vector *v) {
 }
 
 // возвращает указатель на index-ый элемент вектора v
-int * atVector(vector *v, size_t index){
-    if(index > v->capacity)
+int *atVector(vector *v, size_t index) {
+    if (index > v->capacity)
         fprintf(stderr, "IndexError: a[%d] is not exists", index);
     else
         return &v->data[index];
 }
 
 // возвращает указатель на последний элемент вектора v
-int* back(vector *v){
+int *back(vector *v) {
     return atVector(v, v->size - 1);
 }
 
 // возвращает указатель на последний элемент вектора v
-int* front(vector *v){
+int *front(vector *v) {
     return atVector(v, 0);
 }
