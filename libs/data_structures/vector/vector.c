@@ -65,5 +65,5 @@ void popBack(vector *v) {
         fprintf(stderr, "bad alloc");
         exit(1);
     }
-    
+    v->size--;
 }
