@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.c
-vector.h
-D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.h
-
 D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.h
 stdio.h
 -
@@ -19,4 +15,14 @@ stdlib.h
 -
 stdbool.h
 -
+
+D:/Program Files/CLionProjects/untitled7/main.c
+stdio.h
+-
+stdint.h
+-
+assert.h
+-
+libs/data_structures/vector/vector.h
+D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.h
 
