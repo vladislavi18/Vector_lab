@@ -4,6 +4,9 @@
 CMakeFiles/untitled7.dir/libs/data_structures/vector/vector.c.obj: \
  ../libs/data_structures/vector/vector.c \
  ../libs/data_structures/vector/vector.h
+CMakeFiles/untitled7.dir/libs/data_structures/vector/vectorVoid.c.obj: \
+ ../libs/data_structures/vector/vectorVoid.c \
+ ../libs/data_structures/vector/vectorVoid.h
 CMakeFiles/untitled7.dir/main.c.obj: \
- ../libs/data_structures/vector/vector.h \
+ ../libs/data_structures/vector/vectorVoid.h \
  ../main.c
