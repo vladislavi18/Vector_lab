@@ -6,19 +6,6 @@
 #include <float.h>
 
 
-void inputArray(int *a, size_t size) {
-    for (size_t i = 0; i < size; i++) {
-        scanf("%d", &a[i]);
-    }
-}
-
-void outputArray(int *a, size_t size) {
-    for (size_t i = 0; i < size; i++) {
-        printf("%d ", a[i]);
-    }
-    printf("\n");
-}
-
 void test_reserveV_emptyVector() {
     vectorVoid v = createVectorV(2, sizeof(int));
     reserveV(&v, 4);
