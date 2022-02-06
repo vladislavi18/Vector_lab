@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.c
+vector.h
+D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.h
+
+D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.h
+stdio.h
+-
+malloc.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.c
+vectorVoid.h
+D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.h
+
 D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.h
 limits.h
 -
@@ -29,4 +47,8 @@ assert.h
 -
 libs/data_structures/vector/vectorVoid.h
 D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.h
+math.h
+-
+float.h
+-
 
