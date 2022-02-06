@@ -80,6 +80,12 @@
 		<Unit filename="D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vector.h">
 			<Option target="untitled7"/>
 		</Unit>
+		<Unit filename="D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.c">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.h">
+			<Option target="untitled7"/>
+		</Unit>
 		<Unit filename="D:/Program Files/CLionProjects/untitled7/main.c">
 			<Option target="untitled7"/>
 		</Unit>
