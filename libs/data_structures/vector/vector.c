@@ -19,12 +19,12 @@ void reserve(vector *v, size_t newCapacity) {
             fprintf(stderr, "bad alloc");
             exit(1);
         }
-    } else
-        v->data = NULL;
-    if (newCapacity < v->size)
-        v->size = newCapacity;
-    v->capacity = newCapacity;
-
+        v->capacity = newCapacity;
+        if (newCapacity < v->size)
+            v->size = newCapacity;
+    } else {
+        deleteVector(v);
+    }
 }
 
 // удаляет элементы из контейнера, но не освобождает выделенную память.
@@ -38,7 +38,7 @@ void shrinkToFit(vector *v) {
     reserve(v, v->size);
 }
 
-// – освобождает память, выделенную вектору
+// освобождает память, выделенную вектору
 void deleteVector(vector *v) {
     free(v->data);
     v->data = NULL;
