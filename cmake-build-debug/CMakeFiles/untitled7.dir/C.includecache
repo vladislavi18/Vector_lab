@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.c
-vectorVoid.h
-D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.h
-
 D:/Program Files/CLionProjects/untitled7/libs/data_structures/vector/vectorVoid.h
 limits.h
 -
@@ -18,6 +14,10 @@ malloc.h
 stdio.h
 -
 stdlib.h
+-
+stdbool.h
+-
+memory.h
 -
 
 D:/Program Files/CLionProjects/untitled7/main.c

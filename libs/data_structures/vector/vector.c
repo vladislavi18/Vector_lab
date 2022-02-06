@@ -70,10 +70,10 @@ void pushBack(vector *v, int x) {
     v->data[v->size++] = x;
 }
 
-// – удаляет последний элемент из вектора v
+// удаляет последний элемент из вектора v
 void popBack(vector *v) {
-    if (v->data == NULL) {
-        fprintf(stderr, "bad alloc");
+    if (isEmpty(v)) {
+        fprintf(stderr, "Vector is Empty");
         exit(1);
     }
     v->size--;
@@ -81,7 +81,7 @@ void popBack(vector *v) {
 
 // возвращает указатель на index-ый элемент вектора v
 int *atVector(vector *v, size_t index) {
-    if (index > v->capacity)
+    if (index > v->size)
         fprintf(stderr, "IndexError: a[%d] is not exists", index);
     else
         return &v->data[index];
