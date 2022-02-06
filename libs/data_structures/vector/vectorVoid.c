@@ -18,7 +18,7 @@ vectorVoid createVectorV(const size_t n, size_t baseTypeSize) {
 // под хранение элементов вектора
 void reserveV(vectorVoid *v, size_t newCapacity) {
     if (newCapacity) {
-        v->data = (int *) realloc(v->data, sizeof(int) * newCapacity);
+        v->data = (int *) realloc(v->data, sizeof(v->baseTypeSize) * newCapacity);
         badAlloc(v->data);
         v->capacity = newCapacity;
         if (newCapacity < v->size)
