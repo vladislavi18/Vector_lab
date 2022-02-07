@@ -9,7 +9,7 @@ void badAlloc(const int *data) {
 
 // возвращает структуру-дескриптор вектор из n значений.
 vectorVoid createVectorV(const size_t n, size_t baseTypeSize) {
-    int *data = (int *) malloc(sizeof(int) * n);
+    int *data = (int *) malloc(sizeof(baseTypeSize) * n);
     badAlloc(data);
     return (vectorVoid) {data, 0, n, sizeof(baseTypeSize)};
 }

@@ -1,10 +1,10 @@
-# include <stdio.h>
 # include <stdint.h>
 #include <assert.h>
 # include "libs/data_structures/vector/vectorVoid.h"
 #include <math.h>
 #include <float.h>
 
+#define EPS 10E-7
 
 void test_reserveV_emptyVector() {
     vectorVoid v = createVectorV(2, sizeof(int));
@@ -44,13 +44,13 @@ void test_reserveV_vectorIncreases() {
 }
 
 void test_reserveV_emptyVectorFloat() {
-    vectorVoid v = createVectorV(2, sizeof(int));
+    vectorVoid v = createVectorV(2, sizeof(float));
     reserveV(&v, 4);
     assert(v.capacity == 4);
 }
 
 void test_reserveV_vectorReductionFloat() {
-    vectorVoid v = createVectorV(4, sizeof(int));
+    vectorVoid v = createVectorV(4, sizeof(float));
     float a = 1.5f;
     float b = 2.5f;
     float c = 3.7f;
@@ -61,23 +61,22 @@ void test_reserveV_vectorReductionFloat() {
     pushBackV(&v, &d);
     reserveV(&v, 2);
     assert(v.capacity == 2);
-    int e;
+    float e;
     getVectorValueV(&v, 0, &e);
-    assert(fabs(e - 1.5) > DBL_EPSILON);
-    int f;
+    assert(fabs(e - 1.5) < DBL_EPSILON);
+    float f;
     getVectorValueV(&v, 1, &f);
-    assert(fabs(f - 2.5) > DBL_EPSILON);
+    assert(fabs(f - 2.5) < DBL_EPSILON);
 }
 
 void test_reserveV_vectorIncreasesFloat() {
-    vectorVoid v = createVectorV(0, sizeof(int));
+    vectorVoid v = createVectorV(0, sizeof(float));
     float a = 1.6f;
     pushBackV(&v, &a);
     reserveV(&v, 2);
     assert(v.capacity == 2);
-    int b;
-    getVectorValueV(&v, 0, &b);
-    assert(fabs(b - 1.6) > DBL_EPSILON);
+    getVectorValueV(&v, 0, &a);
+    assert(fabs(a - 1.6) < EPS);
 }
 
 void test_reserveV() {
@@ -148,9 +147,9 @@ void test_shrinkToFit_vectorIsNotFull1Float() {
     shrinkToFitV(&v);
     assert(v.capacity == 1);
     assert(v.size == 1);
-    int b;
+    float b;
     getVectorValueV(&v, 0, &b);
-    assert(fabs(b - 1.5) > DBL_EPSILON);
+    assert(fabs(b - 1.5) < DBL_EPSILON);
 }
 
 void test_shrinkToFit_vectorIsNotFull2Float() {
@@ -161,7 +160,7 @@ void test_shrinkToFit_vectorIsNotFull2Float() {
     assert(v.capacity == 1);
     assert(v.size == 1);
     getVectorValueV(&v, 0, &a);
-    assert(fabs(a - 2.3) > DBL_EPSILON);
+    assert(fabs(a - 2.3) < EPS);
 }
 
 void test_shrinkToFit_vectorEmptyFloat() {
@@ -179,7 +178,7 @@ void test_shrinkToFit_vectorFullFloat() {
     assert(v.capacity == 1);
     assert(v.size == 1);
     getVectorValueV(&v, 0, &a);
-    assert(fabs(a - 1.7) > DBL_EPSILON);
+    assert(fabs(a - 1.7) < EPS);
 }
 
 void test_shrinkToFit() {
@@ -289,7 +288,7 @@ void test_isEmpty_vectorNotEmptyFloat() {
     pushBackV(&v, &a);
     assert(isEmptyV(&v) == 0);
     getVectorValueV(&v, 0, &a);
-    assert(fabs(a - 1.4) > DBL_EPSILON);
+    assert(fabs(a - 1.4) < EPS);
     assert(v.capacity == 1);
     assert(v.size == 1);
 }
@@ -320,7 +319,7 @@ void test_isFull_vectorEmpty() {
 }
 
 void test_isFull_vectorFullFloat() {
-    vectorVoid v = createVectorV(1, sizeof(int));
+    vectorVoid v = createVectorV(1, sizeof(float));
     int a = 1;
     pushBackV(&v, &a);
     assert(isFullV(&v) == 1);
@@ -331,7 +330,7 @@ void test_isFull_vectorFullFloat() {
 }
 
 void test_isFull_vectorEmptyFloat() {
-    vectorVoid v = createVectorV(1, sizeof(int));
+    vectorVoid v = createVectorV(1, sizeof(float));
     assert(isFullV(&v) == 0);
     assert(v.capacity == 1);
     assert(v.size == 0);
@@ -407,7 +406,7 @@ void test_pushBack_emptyVectorFloat() {
     assert(v.size == 1);
     assert(v.capacity == 1);
     getVectorValueV(&v, 0, &a);
-    assert(fabs(a - 3.6) > DBL_EPSILON);
+    assert(fabs(a - 3.6) < EPS);
 }
 
 void test_pushBack_fullVector1Float() {
@@ -420,8 +419,8 @@ void test_pushBack_fullVector1Float() {
     assert(v.capacity == 2);
     getVectorValueV(&v, 0, &a);
     getVectorValueV(&v, 1, &b);
-    assert(fabs(a - 3.4) > DBL_EPSILON);
-    assert(fabs(b - 5.7) > DBL_EPSILON);
+    assert(fabs(a - 3.4) < EPS);
+    assert(fabs(b - 5.7) < EPS);
 }
 
 void test_pushBack_fullVector2Float() {
@@ -437,9 +436,9 @@ void test_pushBack_fullVector2Float() {
     getVectorValueV(&v, 0, &a);
     getVectorValueV(&v, 1, &b);
     getVectorValueV(&v, 2, &c);
-    assert(fabs(a - 3.4) > DBL_EPSILON);
-    assert(fabs(b - 5.7) > DBL_EPSILON);
-    assert(fabs(c - 7.3) > DBL_EPSILON);
+    assert(fabs(a - 3.4) < EPS);
+    assert(fabs(b - 5.7) < EPS);
+    assert(fabs(c - 7.3) < EPS);
 }
 
 void test_pushBack() {
@@ -462,7 +461,7 @@ void test_popBack_notEmptyVector() {
 }
 
 void test_popBack_notEmptyVectorFloat() {
-    vectorVoid v = createVectorV(0, sizeof(int));
+    vectorVoid v = createVectorV(0, sizeof(float));
     float a = 10.5f;
     pushBackV(&v, &a);
     assert (v.size == 1);
