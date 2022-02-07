@@ -11,7 +11,7 @@ void badAlloc(const int *data) {
 vectorVoid createVectorV(const size_t n, size_t baseTypeSize) {
     int *data = (int *) malloc(sizeof(baseTypeSize) * n);
     badAlloc(data);
-    return (vectorVoid) {data, 0, n, sizeof(baseTypeSize)};
+    return (vectorVoid) {data, 0, n, baseTypeSize};
 }
 
 // изменяет количество памяти, выделенное
